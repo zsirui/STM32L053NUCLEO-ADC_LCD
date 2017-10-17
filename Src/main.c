@@ -47,7 +47,6 @@
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
-float ADC_ConvertedValueLocal;
 __IO uint16_t ADC_ConvertedValue = 0;
 
 /* USER CODE BEGIN PV */
@@ -104,9 +103,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	HAL_Delay(150);
-	ADC_ConvertedValueLocal = (float)ADC_ConvertedValue * 3.32 / 4096;
-	LCD_GLASS_DisplayFloat(ADC_ConvertedValueLocal);
+	LCD_GLASS_Heartbeat((float)ADC_ConvertedValue * 3.32 / 4096);
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
